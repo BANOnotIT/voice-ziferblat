@@ -2,7 +2,7 @@ from os import path
 
 from pocketsphinx import LiveSpeech
 
-dirname = path.dirname(__file__)
+dirname = path.join(path.dirname(__file__), 'recognition_data')
 
 config = {
     'verbose': False,
