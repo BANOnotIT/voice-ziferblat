@@ -36,11 +36,19 @@ MAP_ADDR = {
 
 
 class DigitOutputController:
-    def __init__(self, masks=MAP_VAL, addresses=MAP_ADDR):
+    def __init__(self, masks=MAP_VAL, addresses=MAP_ADDR, debug=False):
+        if debug:
+            self.debug = True
+            return
+
         self._leds = [LED(i) for i in addresses.values()]
         self._masks = masks
 
     def show(self, digit=0):
+        if self.debug:
+            print(digit)
+            return
+
         vals = self._masks.get(digit, [])
 
         for i, led in enumerate(self._leds):
