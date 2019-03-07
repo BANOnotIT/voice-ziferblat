@@ -25,7 +25,7 @@ for word in stream:
     word = str(word)
     print(word)
 
-    if word in mapping.keys():
+    if word not in mapping.keys():
         continue
 
     controller.show(mapping[word])
