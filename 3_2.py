@@ -35,9 +35,8 @@ def worker():
     while True:
         if stage == 0:
             word = queue.get()
-            if word == 'заводи':
+            if word == 'старт':
                 stage = 1
-                print("")
             queue.task_done()
 
         elif stage == 1:
