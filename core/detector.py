@@ -4,7 +4,7 @@ from pocketsphinx import LiveSpeech
 
 dirname = path.join(path.dirname(__file__), '../recognition_data')
 
-config = {
+default_config = {
     'verbose': False,
     'no_search': False,
     'full_utt': False,
@@ -15,5 +15,5 @@ config = {
 }
 
 
-def get_words_stream():
-    return LiveSpeech(**config)
+def get_words_stream(audio_device):
+    return LiveSpeech(audio_device=audio_device, **default_config)
