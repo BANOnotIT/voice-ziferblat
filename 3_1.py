@@ -22,11 +22,11 @@ mapping = {
 }
 
 for word in stream:
+    word = str(word)
     print(word)
 
-    if word in 'стоп сброс':
-        print("Stopping loop")
-        break
+    if word in mapping.keys():
+        continue
 
     controller.show(mapping[word])
 
