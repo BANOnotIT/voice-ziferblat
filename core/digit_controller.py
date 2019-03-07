@@ -36,6 +36,8 @@ MAP_ADDR = {
 
 
 class DigitOutputController:
+    debug = False
+
     def __init__(self, masks=MAP_VAL, addresses=MAP_ADDR, debug=False):
         if debug:
             self.debug = True
